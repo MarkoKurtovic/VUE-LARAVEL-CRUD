@@ -20,4 +20,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('api')->group(function () {
     Route::get('/todos', 'App\Http\Controllers\TodoController@index');
+    Route::get('/todo/edit/{id}', 'App\Http\Controllers\TodoController@edit');
 });

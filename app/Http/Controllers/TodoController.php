@@ -56,9 +56,10 @@ class TodoController extends Controller
      * @param  \App\Models\Todo  $todo
      * @return \Illuminate\Http\Response
      */
-    public function edit(Todo $todo)
+    public function edit($id)
     {
-        //
+        $todo = Todo::find($id)->toArray();
+        return $todo;
     }
 
     /**

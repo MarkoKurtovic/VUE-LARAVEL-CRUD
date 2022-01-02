@@ -11,13 +11,13 @@
                 </tr>
             </thead>
             <tbody>
-                <tr v-for="product in products" v-bind:key="product.id">
-                    <td>{{product.id}}</td>
-                    <td>{{product.name}}</td>
-                    <td>{{product.detail}}</td>
+                <tr v-for="todo in todos" v-bind:key="todo.id">
+                    <td>{{todo.id}}</td>
+                    <td>{{todo.name}}</td>
+                    <td>{{todo.detail}}</td>
                     <td>
                         <div class="btn-group" role="group">
-                            <router-link :to="{name: 'edit', params: {id: product.id}}" class="btn btn-success">Edit</router-link>
+                            <router-link :to="{name: 'edit', params: {id: todo.id}}" class="btn btn-success">Edit</router-link>
                             <!-- <button class="btn btn-danger" @click="deleteProduct(product.id)">Delete</button> -->
                         </div>
                     </td>
@@ -30,11 +30,11 @@
 <script>
     export default{
        data(){
-          return{products:[]}
+          return{todos:[]}
         },
        created(){
             this.axios.get('http://localhost:8000/api/todos/').then(response => {
-                this.products = response.data;
+                this.todos = response.data;
              });
         },
        methods:{

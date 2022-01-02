@@ -43,14 +43,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      products: []
+      todos: []
     };
   },
   created: function created() {
     var _this = this;
 
     this.axios.get('http://localhost:8000/api/todos/').then(function (response) {
-      _this.products = response.data;
+      _this.todos = response.data;
     });
   },
   methods: {
@@ -162,13 +162,13 @@ var render = function () {
       _vm._v(" "),
       _c(
         "tbody",
-        _vm._l(_vm.products, function (product) {
-          return _c("tr", { key: product.id }, [
-            _c("td", [_vm._v(_vm._s(product.id))]),
+        _vm._l(_vm.todos, function (todo) {
+          return _c("tr", { key: todo.id }, [
+            _c("td", [_vm._v(_vm._s(todo.id))]),
             _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(product.name))]),
+            _c("td", [_vm._v(_vm._s(todo.name))]),
             _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(product.detail))]),
+            _c("td", [_vm._v(_vm._s(todo.detail))]),
             _vm._v(" "),
             _c("td", [
               _c(
@@ -179,9 +179,7 @@ var render = function () {
                     "router-link",
                     {
                       staticClass: "btn btn-success",
-                      attrs: {
-                        to: { name: "edit", params: { id: product.id } },
-                      },
+                      attrs: { to: { name: "edit", params: { id: todo.id } } },
                     },
                     [_vm._v("Edit")]
                   ),

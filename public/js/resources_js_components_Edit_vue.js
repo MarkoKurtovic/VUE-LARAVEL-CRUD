@@ -18,17 +18,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      products: []
+      todo: []
     };
   },
-  created: function created(id) {
+  created: function created() {
     var _this = this;
 
-    this.axios.get('http://localhost:8000/api/todo/edit/${$route.params.id}').then(function (response) {
-      _this.products = response.data;
+    this.axios.get("http://localhost:8000/api/todo/edit/".concat(this.$route.params.id)).then(function (response) {
+      _this.todo = response.data;
     });
   }
 });
@@ -120,9 +124,62 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h2", { staticClass: "text-center" }, [_vm._v("Products List")]),
+    _c("h2", { staticClass: "text-center" }, [_vm._v("Edit todo")]),
+    _c("br"),
     _vm._v(" "),
-    _c("h1", [_vm._v(_vm._s(_vm.$route.params.id))]),
+    _c("div", { staticClass: "text-center" }, [
+      _c("input", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.todo.name,
+            expression: "todo.name",
+          },
+        ],
+        attrs: { type: "text" },
+        domProps: { value: _vm.todo.name },
+        on: {
+          input: function ($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.$set(_vm.todo, "name", $event.target.value)
+          },
+        },
+      }),
+      _c("br"),
+      _c("br"),
+      _vm._v(" "),
+      _c("textarea", {
+        directives: [
+          {
+            name: "model",
+            rawName: "v-model",
+            value: _vm.todo.detail,
+            expression: "todo.detail",
+          },
+        ],
+        attrs: { type: "text" },
+        domProps: { value: _vm.todo.detail },
+        on: {
+          input: function ($event) {
+            if ($event.target.composing) {
+              return
+            }
+            _vm.$set(_vm.todo, "detail", $event.target.value)
+          },
+        },
+      }),
+      _c("br"),
+      _c("br"),
+      _vm._v(" "),
+      _c(
+        "button",
+        { staticClass: "btn btn-primary", attrs: { type: "button" } },
+        [_vm._v("Update")]
+      ),
+    ]),
   ])
 }
 var staticRenderFns = []
