@@ -19,7 +19,12 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::middleware('api')->group(function () {
+    //show todos
     Route::get('/todos', 'App\Http\Controllers\TodoController@index');
+    //show details of todo
     Route::get('/todo/edit/{id}', 'App\Http\Controllers\TodoController@edit');
+    //update todo
     Route::post('/todo/update/{id}', 'App\Http\Controllers\TodoController@update');
+    //create todo
+    Route::post('/todo/create', 'App\Http\Controllers\TodoController@create');
 });

@@ -5372,6 +5372,12 @@ vue__WEBPACK_IMPORTED_MODULE_0__["default"].use(vue_router__WEBPACK_IMPORTED_MOD
     component: function component() {
       return __webpack_require__.e(/*! import() */ "resources_js_components_Edit_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/Edit */ "./resources/js/components/Edit.vue"));
     }
+  }, {
+    name: 'create',
+    path: '/create',
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_components_Create_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./components/Create */ "./resources/js/components/Create.vue"));
+    }
   }]
 }));
 
@@ -43419,7 +43425,7 @@ module.exports = JSON.parse('{"_from":"axios@^0.21","_id":"axios@0.21.4","_inBun
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_components_AllTodos_vue":1,"resources_js_components_Edit_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_components_AllTodos_vue":1,"resources_js_components_Edit_vue":1,"resources_js_components_Create_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

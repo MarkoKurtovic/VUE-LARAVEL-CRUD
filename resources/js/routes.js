@@ -16,5 +16,11 @@ export default new VueRouter({
         name: 'edit',
         path: '/edit',
         component: () => import('./components/Edit')
-      }
+      },
+
+      {
+        name: 'create',
+        path: '/create',
+        component: () => import('./components/Create')
+      },
     ]});

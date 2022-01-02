@@ -23,9 +23,12 @@ class TodoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $todo = new Todo();
+        $todo->name = $request->name;
+        $todo->detail = $request->detail;
+        $todo->save();
     }
 
     /**

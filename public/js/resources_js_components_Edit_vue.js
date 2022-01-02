@@ -38,7 +38,7 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   methods: {
-    updateProduct: function updateProduct() {
+    updateTodo: function updateTodo() {
       var _this2 = this;
 
       this.axios.post("http://localhost:8000/api/todo/update/".concat(this.$route.params.id), this.todo).then(function (response) {
@@ -144,7 +144,7 @@ var render = function () {
         on: {
           submit: function ($event) {
             $event.preventDefault()
-            return _vm.updateProduct.apply(null, arguments)
+            return _vm.updateTodo.apply(null, arguments)
           },
         },
       },
@@ -198,7 +198,7 @@ var render = function () {
           _vm._v(" "),
           _c(
             "button",
-            { staticClass: "btn btn-primary", attrs: { type: "submit" } },
+            { staticClass: "btn btn-success", attrs: { type: "submit" } },
             [_vm._v("Update")]
           ),
         ]),

@@ -1,7 +1,7 @@
 <template>
     <div>
-        <h2 class="text-center">Edit todo</h2><br>
-        <form @submit.prevent="updateTodo">
+        <h2 class="text-center">Create todo</h2><br>
+        <form @submit.prevent="createTodo">
             <div class="text-center">
                 <input type="text" v-model="todo.name"><br><br>
                 <textarea type="text" v-model="todo.detail" /><br><br>
@@ -15,17 +15,12 @@
     export default{
 
         data(){
-          return{todo:[]}
-        },
-       created(){
-            this.axios.get(`http://localhost:8000/api/todo/edit/${this.$route.params.id}`).then(response => {
-                this.todo = response.data;
-             });
+          return{todo:{}}
         },
         methods: {
 
-           updateTodo(){
-                this.axios.post(`http://localhost:8000/api/todo/update/${this.$route.params.id}`, this.todo).then(response =>{
+           createTodo(){
+                this.axios.post(`http://localhost:8000/api/todo/create`, this.todo).then(response =>{
                 this.$router.push("/");
             });
            }

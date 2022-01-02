@@ -1,12 +1,12 @@
 <template>
     <div>
-        <h2 class="text-center">Products List</h2>
-        <table class="table"> 
+        <h2 class="text-center">Todo List</h2>
+        <table class="table" style="width: 80%;   margin-left: auto; margin-right: auto;"> 
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Detail</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Detail</th>
                     <!--<th>Actions</th>-->
                 </tr>
             </thead>

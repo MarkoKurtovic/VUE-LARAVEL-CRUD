@@ -155,43 +155,56 @@ var render = function () {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h2", { staticClass: "text-center" }, [_vm._v("Products List")]),
+    _c("h2", { staticClass: "text-center" }, [_vm._v("Todo List")]),
     _vm._v(" "),
-    _c("table", { staticClass: "table" }, [
-      _vm._m(0),
-      _vm._v(" "),
-      _c(
-        "tbody",
-        _vm._l(_vm.todos, function (todo) {
-          return _c("tr", { key: todo.id }, [
-            _c("td", [_vm._v(_vm._s(todo.id))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(todo.name))]),
-            _vm._v(" "),
-            _c("td", [_vm._v(_vm._s(todo.detail))]),
-            _vm._v(" "),
-            _c("td", [
-              _c(
-                "div",
-                { staticClass: "btn-group", attrs: { role: "group" } },
-                [
-                  _c(
-                    "router-link",
-                    {
-                      staticClass: "btn btn-success",
-                      attrs: { to: { name: "edit", params: { id: todo.id } } },
-                    },
-                    [_vm._v("Edit")]
-                  ),
-                ],
-                1
-              ),
-            ]),
-          ])
-        }),
-        0
-      ),
-    ]),
+    _c(
+      "table",
+      {
+        staticClass: "table",
+        staticStyle: {
+          width: "80%",
+          "margin-left": "auto",
+          "margin-right": "auto",
+        },
+      },
+      [
+        _vm._m(0),
+        _vm._v(" "),
+        _c(
+          "tbody",
+          _vm._l(_vm.todos, function (todo) {
+            return _c("tr", { key: todo.id }, [
+              _c("td", [_vm._v(_vm._s(todo.id))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(todo.name))]),
+              _vm._v(" "),
+              _c("td", [_vm._v(_vm._s(todo.detail))]),
+              _vm._v(" "),
+              _c("td", [
+                _c(
+                  "div",
+                  { staticClass: "btn-group", attrs: { role: "group" } },
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        staticClass: "btn btn-success",
+                        attrs: {
+                          to: { name: "edit", params: { id: todo.id } },
+                        },
+                      },
+                      [_vm._v("Edit")]
+                    ),
+                  ],
+                  1
+                ),
+              ]),
+            ])
+          }),
+          0
+        ),
+      ]
+    ),
   ])
 }
 var staticRenderFns = [
@@ -201,11 +214,11 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("thead", [
       _c("tr", [
-        _c("th", [_vm._v("ID")]),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("ID")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Name")]),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Name")]),
         _vm._v(" "),
-        _c("th", [_vm._v("Detail")]),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Detail")]),
       ]),
     ])
   },
