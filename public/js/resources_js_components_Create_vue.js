@@ -192,7 +192,7 @@ var render = function () {
           _c(
             "button",
             { staticClass: "btn btn-success", attrs: { type: "submit" } },
-            [_vm._v("Update")]
+            [_vm._v("Create")]
           ),
         ]),
       ]

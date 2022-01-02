@@ -74,7 +74,7 @@ class TodoController extends Controller
      */
     public function update($id, Request $request)
     {
-        Todo::Where('id',$id)->update((['name'=>$request->name, 'detail'=>$request->detail]));
+        Todo::where('id',$id)->update((['name'=>$request->name, 'detail'=>$request->detail]));
     }
 
     /**
@@ -83,8 +83,8 @@ class TodoController extends Controller
      * @param  \App\Models\Todo  $todo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Todo $todo)
+    public function destroy($id)
     {
-        //
+        Todo::where('id',$id)->delete();
     }
 }

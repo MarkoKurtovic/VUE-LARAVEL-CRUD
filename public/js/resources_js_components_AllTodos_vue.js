@@ -54,15 +54,11 @@ __webpack_require__.r(__webpack_exports__);
     });
   },
   methods: {
-    deleteProduct: function deleteProduct(id) {
+    deleteTodo: function deleteTodo(id) {
       var _this2 = this;
 
-      this.axios["delete"]('http://localhost:8000/api/todos/${id}').then(function (response) {
-        var i = _this2.products.map(function (data) {
-          return data.id;
-        }).indexOf(id);
-
-        _this2.products.splice(i, 1);
+      this.axios.get("http://localhost:8000/api/delete/".concat(id)).then(function (response) {
+        _this2.$router.push("/");
       });
     }
   }
@@ -194,6 +190,20 @@ var render = function () {
                         },
                       },
                       [_vm._v("Edit")]
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticClass: "btn btn-danger",
+                        staticStyle: { "margin-left": "5px" },
+                        on: {
+                          click: function ($event) {
+                            return _vm.deleteTodo(todo.id)
+                          },
+                        },
+                      },
+                      [_vm._v("Delete")]
                     ),
                   ],
                   1

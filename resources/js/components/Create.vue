@@ -5,7 +5,7 @@
             <div class="text-center">
                 <input type="text" v-model="todo.name"><br><br>
                 <textarea type="text" v-model="todo.detail" /><br><br>
-                <button  type="submit" class="btn btn-success">Update</button>
+                <button  type="submit" class="btn btn-success">Create</button>
             </div>
         </form>
     </div>

@@ -18,7 +18,7 @@
                     <td>
                         <div class="btn-group" role="group">
                             <router-link :to="{name: 'edit', params: {id: todo.id}}" class="btn btn-success">Edit</router-link>
-                            <!-- <button class="btn btn-danger" @click="deleteProduct(product.id)">Delete</button> -->
+                            <button class="btn btn-danger" style="margin-left:5px;" @click="deleteTodo(todo.id)">Delete</button>
                         </div>
                     </td>
                 </tr>
@@ -38,10 +38,9 @@
              });
         },
        methods:{
-           deleteProduct(id){
-                this.axios.delete('http://localhost:8000/api/todos/${id}').then(response =>{
-                    let i=this.products.map(data=>data.id).indexOf(id);
-                    this.products.splice(i, 1)
+           deleteTodo(id){
+                this.axios.get(`http://localhost:8000/api/delete/${id}`).then(response =>{
+                     this.$router.push("/");
                 });
             }
         }

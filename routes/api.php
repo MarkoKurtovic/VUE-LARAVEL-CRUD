@@ -27,4 +27,6 @@ Route::middleware('api')->group(function () {
     Route::post('/todo/update/{id}', 'App\Http\Controllers\TodoController@update');
     //create todo
     Route::post('/todo/create', 'App\Http\Controllers\TodoController@create');
+    //update todo
+    Route::get('/todo/delete/{id}', 'App\Http\Controllers\TodoController@destroy');
 });
