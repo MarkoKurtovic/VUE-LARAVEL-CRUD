@@ -69,9 +69,9 @@ class TodoController extends Controller
      * @param  \App\Models\Todo  $todo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Todo $todo)
+    public function update($id, Request $request)
     {
-        //
+        Todo::Where('id',$id)->update((['name'=>$request->name, 'detail'=>$request->detail]));
     }
 
     /**
